@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import ContactView  from "@/views/ContactView.vue";
 import JobComponent from "@/components/JobComponent.vue";
 import JobDetailsComponent from "@/components/JobDetailsComponent.vue";
+import NotFoundComponent from "@/components/NotFoundComponent.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,7 +32,25 @@ const router = createRouter({
     {
       path: '/job/:id',
       name: 'jobDetails',
-      component: JobDetailsComponent
+      component: JobDetailsComponent,
+      props: true
+    },
+    {
+      path:'/all-jobs',
+      redirect: '/job',
+    },
+    {
+      path:'/about-us',
+      redirect: '/about'
+    },
+    {
+      path:'/contact-us',
+      redirect: '/contact'
+    },
+    {
+      path:'/:catchAll(.*)',
+      name: 'notFound',
+      component: NotFoundComponent
     }
   ]
 })
