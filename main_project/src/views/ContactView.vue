@@ -1,8 +1,12 @@
 <template>
-
+<h1>This is a Contact page</h1>
 </template>
-<script setup>
 
+
+<script>
+  export default {
+    name: "ContactView",
+  }
 </script>
 
 
